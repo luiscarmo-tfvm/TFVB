@@ -9,6 +9,13 @@ const discordClient = new Client({
     intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages]
 });
 
+const port = process.env.PORT || 3000;
+
+const http = require('http');
+
+const server = http.createServer();
+server.listen(port);
+
 const questionsChannel = process.env.QUESTIONS_CHANNEL
 const oAuth = process.env.OAUTH
 const nick = process.env.NICK
